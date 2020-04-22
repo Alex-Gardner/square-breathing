@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Breathing Well</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Oswald:wght@200&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Quicksand:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="hero center-box vertical-orientation">
+        <video class="background-video" autoplay muted loop>
+          <source src="./assets/videos/bokeh-citybg-vid.mp4" type="video/mp4" />
+        </video>
+        <h1 class="hero-title">
+          Breathing Well
+        </h1>
+        <p class="description">
+          Square breathing is a technique used to slow thoughts, calm the mind,
+          and aid in meditation
+        </p>
+      </div>
+    </header>
+    <main class="main-content center-box vertical-orientation">
+      <div class="interaction-container center-box vertical-orientation">
+        <div id="revealed-img-holder" class="revealed-img-holder">
+          <img
+            src="./assets/images/black-and-white-forest.webp"
+            alt=""
+            id="revealed-img"
+            class="revealed-img"
+          />
+        </div>
+        <span class="button-holder">
+          <button
+            type="button"
+            id="start-animation-btn"
+            class="start-animation-btn start-stop-btn"
+          >
+            Start Breathing
+          </button>
+          <button type="button" id="reset-btn" class="reset-btn start-stop-btn">
+            Reset
+          </button>
+        </span>
+        <h2 class="text-directions" id="text-directions">Let's Breathe</h2>
+        <div id="outer-box-frame" class="outer-box-frame center-box">
+          <div class="box-to-animate" id="animated-square"></div>
+        </div>
+      </div>
+    </main>
+    <section class="options-panel-holder">
+      <div class="options-panel center-box">
+        <h2 class="options-page-title">Options</h2>
+        <div class="modal-holder hidden" id="modal-holder">
+          <div class="image-gallery-title">
+            <h2 class="gallery-title-text">
+              Choose a Background
+            </h2>
+          </div>
+          <div class="gallery-addition-form-holder">
+            <label for="gallery-addition">Add an Image to the Gallery:</label>
+            <input
+              class="gallery-addition-input"
+              type="url"
+              id="gallery-addition"
+              placeholder="Image URL (e.g., https://www.other-site.com/cool-img.jpg)"
+            />
+            <button
+              type="button"
+              class="submit-new-image-button"
+              id="submit-new-image-button"
+            >
+              Add Image
+            </button>
+          </div>
+          <ul
+            id="image-gallery-holder"
+            class="background-gallery-holder hidden"
+          ></ul>
+        </div>
+        <button
+          type="button"
+          id="image-choice-btn"
+          class="background-img-option-btn vertical-box"
+        >
+          <h2 class="choose-img">
+            Background Image >>
+          </h2>
+          <img
+            src=""
+            alt=""
+            class="background-img-preview"
+            id="background-img-preview"
+            height="200px"
+            width="250px"
+          />
+        </button>
+        <div class="animation-type-chooser">
+          <h2 class="choose-animation-type">
+            Choose An Animation Type
+          </h2>
+          <button
+            type="button"
+            id="circle-around-optn-btn"
+            class="animation-option-1 animation-optn center-box selected"
+          >
+            <div class="option-1-stationary">
+              <div class="option-1-inner-mover" id="option-1-mover"></div>
+            </div>
+          </button>
+          <button
+            type="button"
+            id="expand-square-optn-btn"
+            class="animation-option-2 animation-optn center-box"
+          >
+            <div class="option-2-stationary">
+              <div class="option-2-inner-mover" id="option-2-mover"></div>
+            </div>
+          </button>
+        </div>
+        <div class="animation-speed-chooser">
+          <h2 class="animation-speed-title">Duration</h2>
+          <p class="animation-speed-display">
+            Cycle Length: <span id="animation-cycle-length"></span>s
+          </p>
+          <input
+            type="range"
+            min="4"
+            max="40"
+            value="8"
+            id="animation-speed-slider"
+            class="animation-speed-slider"
+          />
+        </div>
+        <div class="cycle-number-holder">
+          <label for="cycle-number-input">
+            <h3 class="cycle-number-display">
+              Number of Cycles: <span id="animation-cycle-number"></span>
+            </h3>
+          </label>
+          <input
+            pattern="^[0-9]{1,2}[:.,-]?$"
+            value="3"
+            step="1"
+            name="input-cycles"
+            type="number"
+            min="1"
+            max="100"
+            class="cycle-number-input"
+            id="cycle-number-input"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- <footer>
+      <div class="copyright-holder center-box">
+        <p id="copyright-notice" class="copyright-information">&copy</p>
+      </div>
+    </footer> -->
+  </body>
+  <script src="main.js"></script>
+</html>

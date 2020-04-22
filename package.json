@@ -1,0 +1,14 @@
+{
+  "name": "square-breathing-help",
+  "version": "1.0.0",
+  "description": "mini applet to help with square breathing technique",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cwebp": "^2.0.5"
+  }
+}
