@@ -190,7 +190,9 @@ function removeAnimationClasses(element) {
     "expand-to-fill-animation",
     "circumference-animation",
     "expansion-animation",
-    "selected"
+    "selected",
+    "fading-in",
+    "fading-out"
   );
 }
 let animationTypeClass = "circle-around-animation";
@@ -222,6 +224,7 @@ function giveDirection() {
 }
 
 startButton.onclick = function() {
+  removeAnimationClasses(textDirections);
   animatedSquare.classList.add(animationTypeClass);
   animatedSquare.style.animationDuration = `${animationSpeedSlider.value}s`;
   animatedSquare.style.animationIterationCount = `${currentAnimationCycleNumber}`;
@@ -250,19 +253,19 @@ animatedSquare.onanimationstart = () => {
 
 animatedSquare.onanimationiteration = () => {
   currentIteration++;
-  console.log(`Square has moved ${currentIteration} times`);
+  // console.log(`Square has moved ${currentIteration} times`);
 };
 
 animatedSquare.onanimationend = () => {
   // reset initial state (mostly)
   startButton.disabled = false;
   removeAnimationClasses(animatedSquare);
-  // animatedSquare.classList.remove("circle-around-animation");
   directionsIndex = 0;
   iterationCount = 0;
   currentIteration = 0;
   startButton.innerHTML = "Breathe Again";
   textDirections.innerHTML = "Exercise Complete";
+  fadeElementOut(textDirections);
 };
 
 function resetToInitial() {
@@ -361,9 +364,3 @@ const newImageSubmitButton = document.getElementById("submit-new-image-button");
 newImageSubmitButton.onclick = function() {
   addImageToGallery();
 };
-
-/* ------------- Copyright Notice in Footer -------------- */
-// var yearString = new Date().getFullYear();
-
-// let textInfo = document.getElementById("copyright-notice");
-// textInfo.append(` ${yearString} Alex Gardner`);
