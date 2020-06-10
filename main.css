@@ -101,6 +101,7 @@ main {
   background-color: rgba(221, 160, 221, 0.7);
   opacity: 100%;
   transition: opacity 0.05s; /* transition duration changed in JS */
+  -webkit-transition: opacity 0.05s;
 }
 .outer-box-frame.fading-out {
   opacity: 0%;
@@ -117,6 +118,7 @@ main {
   font-family: "Oswald", "Garamond", sans-serif;
   opacity: 100%;
   transition: opacity 3s;
+  -webkit-transition: opacity 3s;
 }
 .text-directions.fading-out {
   opacity: 0%;
@@ -185,6 +187,7 @@ button {
   height: 100%;
   background-color: rgba(144, 238, 144, 0);
   transition: filter(opacity) 0.05s; /* transition duration changed in JS*/
+  -webkit-transition: filter(opacity) 0.05s;
 }
 .revealed-img-holder.fading-in {
   filter: opacity(100%);
@@ -254,7 +257,7 @@ button {
   scroll-snap-stop: always;
   display: flex;
   flex-direction: column;
-  background-color: rgba(32, 32, 32, 0.9);
+  background-color: rgba(32, 32, 32, 0.98);
   height: 100%;
   position: absolute;
   top: 0;
@@ -324,6 +327,11 @@ button {
 }
 .gallery-addition-form-holder {
   grid-column: -1 / 1;
+}
+.gallery-addition-form-holder > label {
+  color: rgba(171, 226, 255);
+  font-size: 1.5em;
+  padding-left: 4px;
 }
 .gallery-addition-input {
   width: 75%;
